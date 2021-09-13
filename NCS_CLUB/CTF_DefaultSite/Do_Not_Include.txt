@@ -1,0 +1,16 @@
+Flags:
+
+- NONE
+
+Bonus Flags:
+
+- NONE
+
+Desc:
+
+- Default site for CTF
+- Is ready to submit and get flags
+- Can display scoreboard
+- No flags present on this site... this is to be modified
+	for future CTFs
+- also for version control...

@@ -1,0 +1,3 @@
+REM author is josh
+
+STRING hello world

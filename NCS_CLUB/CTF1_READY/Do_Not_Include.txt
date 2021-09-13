@@ -1,0 +1,16 @@
+Flags:
+
+MayTheSourceBeWithYou
+Whoops
+HiddenMessage
+InTheDark
+StartHere
+
+Bonus Flags:
+IfItQuacks
+
+
+Notes:
+- repeat flags are not caught yet
+- functional
+- first CTF of NCSCLUB
