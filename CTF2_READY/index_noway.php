@@ -13,7 +13,7 @@
 
 </a>
 <h1 style="color:white;font-size:45px;"> Did ya think that would work again? </h1>
-<img src="LOL.jpg" alt="No Way Jose">
+<img src="LOL.jpg" alt="No Way">
 
 </center>
 
