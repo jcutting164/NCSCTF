@@ -1,0 +1,516 @@
+# !AbgWbfu
+qrs punatrpune(rrrr, uuuu, cccc):
+    uuuu[rrrr] = cccc
+    erghea uuuu
+
+
+qrs znva():
+    cevag("Yrg'f trarengr fbzr cnffjbeqf!")
+    dddd = vag(vachg("Ubj ybat vf gur cnffjbeq (svkrq yratgu): "))
+    ybjrepnfr = Snyfr
+    hccrepnfr = Snyfr
+    flzobyf = Snyfr
+    ahzoref = Snyfr
+    pbzobf = 0
+    gbgnyfybgf = 0
+
+    ybjrepnfrnycun = ['n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f',
+                      'g', 'h', 'i', 'j', 'k', 'l', 'm']
+    hccrepnfrnycun = ['N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'A', 'B', 'C', 'D', 'E', 'F',
+                      'G', 'H', 'I', 'J', 'K', 'L', 'M']
+    flzobyfnycun = ['~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '-', '+', '=', '{', '[', '}',
+                    ']', '|', "\\", ':', ';', '"', '\'', '<', ',', '>', '.', '?', '/']
+    ahzorefnycun = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+
+    aaaa = []
+
+    vs vachg("Ybjrepnfr? l/a : ") == "l":
+        ybjrepnfr = Gehr
+        gbgnyfybgf += 26
+        aaaa += ybjrepnfrnycun
+    vs vachg("Hccrepnfr? l/a : ") == "l":
+        hccrepnfr = Gehr
+        gbgnyfybgf += 26
+        aaaa += hccrepnfrnycun
+    vs vachg("Flzobyf? l/a : ") == "l":
+        flzobyf = Gehr
+        gbgnyfybgf += 32
+        aaaa += flzobyfnycun
+    vs vachg("Ahzoref? l/a : ") == "l":
+        ahzoref = Gehr
+        gbgnyfybgf += 10
+        aaaa += ahzorefnycun
+
+    cneguuuufge = ""
+    cneguuuu = []
+    vs vachg("Qb lbh xabj nal punenpgref? : ") == "l":
+        cneguuuufge = fge(vachg("Jevgr bhg cnffjbeq jvgu '-' va haxabja punenpgre cynprf: "))
+        cneguuuu = [pune sbe pune va cneguuuufge]
+        cevag(cneguuuufge)
+        cevag(cneguuuu)
+
+    vs yra(cneguuuufge) == 0:
+        gbgnypbzobf = cbj(gbgnyfybgf, dddd)
+
+        cevag("Gbgny pbzovangvbaf trarengvat: " + fge(gbgnypbzobf))
+        cevag("aaaa: " + ''.wbva(aaaa))
+
+        # 26 hccre pnfr
+        # 26 ybjre pnfr
+        # 10 ahzoref
+        # 32 flzobyf
+
+        guruuuu = []
+        gbgnyyvfg = []
+        svanygbgnyyvarf = []
+
+        # vavg bs uuuu
+        sbe k va enatr(0, dddd):
+            guruuuu += aaaa[0]
+
+        # ''.wbva(yvfg)  ergheaf gur fgevat bs n yvfg sbe gbgnyyvfg
+
+        sbe k va enatr(0, gbgnypbzobf - 1):
+            pbzobf += 1
+            vs (pbzobf >= 1000000):
+                cevag(k)
+                pbzobf = 0
+            svanygbgnyyvarf += ''.wbva(guruuuu + yvfg("\a"))
+            grzcvag = 0
+            pheeragpune = guruuuu[grzcvag]
+
+            juvyr pheeragpune == aaaa[yra(aaaa) - 1]:
+                guruuuu = punatrpune(grzcvag, guruuuu, aaaa[yra(aaaa) - 1])
+                grzcvag += 1
+                pheeragpune = guruuuu[grzcvag]
+
+            # guvf yvar punatrf gur yrggre qrfvtangrq ol zbivat vg bar hc gur fpnyr
+            guruuuu = punatrpune(grzcvag, guruuuu, aaaa[aaaa.vaqrk(guruuuu[grzcvag]) + 1])
+
+            # erfrgf rirel fybg orsber vg
+
+            vs grzcvag != 0:
+                sbe fcbg va enatr(0, grzcvag):
+                    guruuuu = punatrpune(fcbg, guruuuu, aaaa[0])
+
+        svanygbgnyyvarf += ''.wbva(guruuuu + yvfg("\a"))
+        s = bcra("uuuuyvfg.gkg", "n")
+        s.jevgryvarf(svanygbgnyyvarf)
+        s.pybfr()
+    ryfr:
+        grzcdddd = dddd
+        sbe pune va cneguuuu:
+            vs pune != "-":
+                grzcdddd -= 1
+        gbgnypbzobf = cbj(gbgnyfybgf, grzcdddd)
+        cevag("Gbgny pbzovangvbaf trarengvat: " + fge(gbgnypbzobf))
+        cevag("aaaa: " + ''.wbva(aaaa))
+
+        # 26 hccre pnfr
+        # 26 ybjre pnfr
+        # 10 ahzoref
+        # 32 flzobyf
+
+        guruuuu = []
+        gbgnyyvfg = []
+        svanygbgnyyvarf = []
+
+        # vavg bs uuuu
+        sbe k va enatr(0, dddd):
+            vs(cneguuuu[k]=="-"):
+                guruuuu += aaaa[0]
+            ryfr:
+                guruuuu+=cneguuuu[k]
+
+        # ''.wbva(yvfg)  ergheaf gur fgevat bs n yvfg sbe gbgnyyvfg
+        ybpxrqvapunef = []
+
+        sbe pune va guruuuu:
+            vs(pune!=aaaa[0]):
+                ybpxrqvapunef.nccraq("Gehr")
+            ryfr:
+                ybpxrqvapunef.nccraq("Snyfr")
+
+        cevag(ybpxrqvapunef)
+        sbe k va enatr(0, gbgnypbzobf - 1):
+            pbzobf += 1
+            vs (pbzobf >= 1000000):
+                cevag(k)
+                pbzobf = 0
+            svanygbgnyyvarf += ''.wbva(guruuuu + yvfg("\a"))
+            grzcvag = 0
+            pheeragpune = guruuuu[grzcvag]
+
+            #perngrf obbyrna yvfg bs ybpxrq va punef...
+
+
+
+
+            juvyr pheeragpune == aaaa[yra(aaaa) - 1] be ybpxrqvapunef[grzcvag]=="Gehr":
+                #guruuuu = punatrpune(grzcvag, guruuuu, aaaa[yra(aaaa) - 1])
+                grzcvag += 1
+                pheeragpune = guruuuu[grzcvag]
+
+            # guvf yvar punatrf gur yrggre qrfvtangrq ol zbivat vg bar hc gur fpnyr
+            guruuuu = punatrpune(grzcvag, guruuuu, aaaa[aaaa.vaqrk(guruuuu[grzcvag]) + 1])
+
+            # erfrgf rirel fybg orsber vg
+
+            vs grzcvag != 0:
+                sbe fcbg va enatr(0, grzcvag):
+                    vs abg ybpxrqvapunef[fcbg]=="Gehr":
+                        guruuuu = punatrpune(fcbg, guruuuu, aaaa[0])
+
+        svanygbgnyyvarf += ''.wbva(guruuuu + yvfg("\a"))
+        s = bcra("uuuuyvfg.gkg", "n")
+        s.jevgryvarf(svanygbgnyyvarf)
+        s.pybfr()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #
+        #       .__   __.   ______     _______.  ______ .___________. _______    ___.______        ______   .___________.__   ____   ___
+        # |  \ |  |  /      |   /       | /      ||           ||   ____|  /  /|   _  \      /  __  \  |           /_ | |___ \  \  \
+        # |   \|  | |  ,----'  |   (----`|  ,----'`---|  |----`|  |__    |  | |  |_)  |    |  |  |  | `---|  |----`| |   __) |  |  |
+        # |  . `  | |  |        \   \    |  |         |  |     |   __|  /  /  |      /     |  |  |  |     |  |     | |  |__ <    \  \
+        # |  |\   | |  `----.----)   |   |  `----.    |  |     |  |     \  \  |  |\  \----.|  `--'  |     |  |     | |  ___) |   /  /
+        # |__| \__|  \______|_______/     \______|    |__|     |__|      |  | | _| `._____| \______/      |__|     |_| |____/   |  |
+        #                                                                 \__\                                                 /__/  
+        #
+        #
+        #
+        #
+        #
+        #
+        #
+        #
+        #
+        #
+        #
+        #
+        #
+        #
+        #
+        #
+        #
+        #
+        #
+        #
+        #
+        #
+        #
+        #
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+qrs ehaguvfpbqrvafgrnq():
+
+
+    cevag("2")
+    cevag("3")
+    cevag("7")
+    cevag("43")
+    cevag("1807")
+    cevag("3263443")
+    cevag("10650056950807")
+    cevag("113423713055421844361000443")
+
+
+    cevag("F", raq=' ')
+    cevag("H", raq=' ')
+    cevag("S", raq=' ')
+    cevag("S", raq=' ')
+    cevag("R", raq=' ')
+    cevag("E", raq=' ')
+    cevag("V", raq=' ')
+    cevag("A", raq=' ')
+    cevag(" ", raq=' ')
+    cevag("F", raq=' ')
+    cevag("H", raq=' ')
+    cevag("P", raq=' ')
+    cevag("P", raq=' ')
+    cevag("B", raq=' ')
+    cevag("G", raq=' ')
+    cevag("N", raq=' ')
+    cevag("F", raq=' ')
+    cevag("U")
+    cevag("a p f p g s {2 uvagf, bar anzr}")
+
+vs __anzr__ == '__znva__':
+    ehaguvfpbqrvafgrnq()
